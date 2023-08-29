@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<div id = "root" data-controller="react"></div>
+
+<%=content_tag(:div, "", id: "root", data: {
+  controller: "react"
+})%>
+
+<h1 style = "text-align:center">Articles</h1>
+
+<div id="articles" class = "flexcol">
+  <% @articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+  <% end %>
+</div>
+
+
+<%= link_to "New article", new_article_path, class: "flexcol link mt20 mb20" %>
